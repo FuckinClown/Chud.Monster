@@ -7,23 +7,46 @@
 
 body {
   font-family: "Comic Sans MS", cursive, sans-serif;
-  background: #000080;
-  background-image: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 10px,
-      rgba(255, 255, 255, 0.03) 10px,
-      rgba(255, 255, 255, 0.03) 20px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 10px,
-      rgba(255, 255, 255, 0.03) 10px,
-      rgba(255, 255, 255, 0.03) 20px
-    );
+  background: #000033;
+  /* Adding proper starfield background */
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(2px 2px at 90% 60%, white, transparent),
+    radial-gradient(1px 1px at 33% 85%, white, transparent),
+    radial-gradient(1px 1px at 15% 50%, white, transparent),
+    radial-gradient(2px 2px at 45% 20%, white, transparent),
+    radial-gradient(1px 1px at 72% 95%, white, transparent),
+    radial-gradient(2px 2px at 25% 65%, white, transparent),
+    radial-gradient(1px 1px at 88% 40%, white, transparent),
+    radial-gradient(1px 1px at 10% 90%, white, transparent),
+    radial-gradient(2px 2px at 95% 25%, white, transparent),
+    radial-gradient(1px 1px at 40% 75%, white, transparent),
+    radial-gradient(1px 1px at 65% 15%, white, transparent),
+    linear-gradient(180deg, #000033 0%, #000055 100%);
+  background-size:
+    200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%,
+    200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%,
+    200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%,
+    100% 100%;
+  background-position: 0 0;
+  animation: twinkle 100s linear infinite;
   color: #ffff00;
   overflow-x: hidden;
+}
+
+@keyframes twinkle {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position:
+      200% 200%, -200% 200%, 100% -100%, -150% 150%, 150% -150%,
+      -100% 100%, 200% -200%, -200% -200%, 100% 200%, -100% -100%,
+      150% 100%, -150% -150%, 100% 150%, -200% 100%, 200% -100%, 0 0;
+  }
 }
 
 /* Floating stars */
@@ -39,8 +62,10 @@ body {
 
 .star {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  /* Making stars more visible with glow effect */
+  filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8)) brightness(1.5);
   animation: float 3s ease-in-out infinite;
 }
 

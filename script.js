@@ -1,30 +1,29 @@
 // Random music player
 async function loadRandomMusic() {
-  // List of music files - add your files here
-  const musicFiles = ["song1.mp3", "song2.mp3", "song3.mp3"]
+  // List of music files - add your MP3 filenames here
+  const musicFiles = [
+    "example-song.mp3",
+    // Add more files like: "cool-tune.mp3", "awesome-beat.mp3"
+  ]
 
   const nowPlayingDiv = document.getElementById("now-playing")
-  console.log("[v0] Loading music, found files:", musicFiles)
 
   if (musicFiles.length > 0) {
     // Pick random song
     const randomSong = musicFiles[Math.floor(Math.random() * musicFiles.length)]
-    const songPath = `/music/${randomSong}`
+    const songPath = `music/${randomSong}`
     const songName = randomSong.replace(".mp3", "").replace(/-|_/g, " ")
-
-    console.log("[v0] Playing:", songPath)
 
     nowPlayingDiv.innerHTML = `
       <p style="margin-bottom: 8px;">🎵 ${songName} 🎵</p>
-      <audio controls autoplay>
+      <audio controls autoplay loop>
         <source src="${songPath}" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     `
   } else {
-    console.log("[v0] No music files in array")
     nowPlayingDiv.innerHTML =
-      '<p>No music files found</p><p style="font-size: 9px; margin-top: 5px;">Add MP3 filenames to musicFiles array in script.js</p>'
+      '<p style="font-size: 11px;">Add music files!</p><p style="font-size: 9px; margin-top: 5px;">1. Add filenames to musicFiles array in script.js<br>2. Put MP3 files in /music/ folder</p>'
   }
 }
 
@@ -35,28 +34,28 @@ if (document.getElementById("now-playing")) {
 
 // Gallery loader
 async function loadGallery() {
-  // List of gallery images - add your files here
-  const galleryImages = ["image1.jpg", "image2.png", "image3.gif"]
+  // List of gallery images - add your image filenames here
+  const galleryImages = [
+    "example-image.jpg",
+    // Add more files like: "cool-pic.png", "awesome-gif.gif"
+  ]
 
   const galleryGrid = document.getElementById("gallery-grid")
-  console.log("[v0] Loading gallery, found images:", galleryImages)
 
   if (galleryImages.length > 0) {
     galleryGrid.innerHTML = galleryImages
       .map(
         (image) => `
       <div class="gallery-item">
-        <img src="/gallery/${image}" alt="${image}">
+        <img src="gallery/${image}" alt="${image}">
         <p>${image}</p>
       </div>
     `,
       )
       .join("")
-    console.log("[v0] Gallery loaded with", galleryImages.length, "images")
   } else {
-    console.log("[v0] No images in array")
     galleryGrid.innerHTML =
-      '<div style="grid-column: 1/-1; text-align: center; padding: 40px;"><h3>No images yet!</h3><p>Add image filenames to galleryImages array in script.js and put the files in /gallery/ folder</p></div>'
+      '<div style="grid-column: 1/-1; text-align: center; padding: 40px; background: #00ffff; border: 3px solid #ffff00; border-radius: 10px;"><h3>No images yet!</h3><p style="margin-top: 10px;">1. Add image filenames to galleryImages array in script.js<br>2. Put image files in /gallery/ folder</p></div>'
   }
 }
 
