@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guestbook - CHUD.MONSTER</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guestbook-form {
+      background: #00FFFF;
+      color: #000;
+      border: 3px solid #FFFF00;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+    .guestbook-form input,
+    .guestbook-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 2px solid #000;
+      border-radius: 5px;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 14px;
+    }
+    .guestbook-form button {
+      background: #FF00FF;
+      color: #FFFF00;
+      padding: 12px 24px;
+      border: 3px solid #FFFF00;
+      border-radius: 5px;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .guestbook-form button:hover {
+      background: #FFFF00;
+      color: #FF00FF;
+      transform: scale(1.05);
+    }
+    .guestbook-entry {
+      background: #FFFF00;
+      border: 3px solid #FF00FF;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars">
+    <img src="glowing-star.png" alt="star" class="star" style="top: 10%; left: 5%;">
+    <img src="glowing-star.png" alt="star" class="star" style="top: 20%; left: 90%;">
+    <img src="glowing-star.png" alt="star" class="star" style="top: 70%; left: 10%;">
+    <img src="glowing-star.png" alt="star" class="star" style="top: 80%; left: 85%;">
+  </div>
+
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span>📝 SIGN OUR GUESTBOOK 📝 LEAVE YOUR MARK 📝 SIGN OUR GUESTBOOK 📝 LEAVE YOUR MARK 📝</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <div class="widget">
+        <h3 class="blink">🌟 NAVIGATION 🌟</h3>
+        <nav>
+          <a href="index.html" class="nav-button">🏠 HOME</a>
+          <a href="about.html" class="nav-button">📖 ABOUT</a>
+          <a href="forum.html" class="nav-button">💬 FORUM</a>
+          <a href="gallery.html" class="nav-button">🖼️ GALLERY</a>
+          <a href="links.html" class="nav-button">🔗 COOL LINKS</a>
+          <a href="guestbook.html" class="nav-button">📝 GUESTBOOK</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="content-box">
+        <h1 class="rainbow-text">GUESTBOOK</h1>
+        <h2 class="blink">📝 Sign Our Guestbook! 📝</h2>
+
+        <form id="guestbook-form" class="guestbook-form">
+          <h3 style="margin-bottom: 15px;">✍️ Leave Your Message ✍️</h3>
+          <input type="text" id="name" placeholder="Your Name" required>
+          <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">🎉 SIGN GUESTBOOK 🎉</button>
+        </form>
+
+        <img src="under-construction-banner.jpg" alt="Under Construction" style="margin: 20px 0; max-width: 100%;">
+
+        <h3 style="text-align: center; margin: 30px 0 15px 0;">📖 PREVIOUS ENTRIES 📖</h3>
+        
+        <div id="guestbook-entries">
+          <div class="guestbook-entry">
+            <p><strong>WebMaster2000</strong> - 12/31/2024</p>
+            <p>First! This site is totally radical! 🔥</p>
+          </div>
+          <div class="guestbook-entry">
+            <p><strong>RetroFan99</strong> - 12/30/2024</p>
+            <p>Takes me back to the GeoCities days! Love the design! ✨</p>
+          </div>
+          <div class="guestbook-entry">
+            <p><strong>PixelPunk</strong> - 12/29/2024</p>
+            <p>This is what the internet should be! Keep it up! 🎨</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="widget">
+        <h3>📊 GUESTBOOK STATS</h3>
+        <p style="font-size: 11px;">
+          Total Entries: 42<br>
+          Latest Entry: Today<br>
+          Most Active Day: Yesterday
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 CHUD.MONSTER | <a href="index.html">Back to Home</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
